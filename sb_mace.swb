@@ -1,0 +1,45 @@
+#!/bin/bash
+#SBATCH --partition=gpux1
+#SBATCH --time=24
+#SBATCH --job-name="mace_M14"
+
+cd $SLURM_SUBMIT_DIR
+
+echo "Date              = $(date)"
+echo "Hostname          = $(hostname -s)"
+echo "Working Directory = $(pwd)"
+echo ""
+echo "Number of Nodes Allocated = $SLURM_JOB_NUM_NODES"
+echo "Number of Tasks Allocated = $SLURM_NTASKS"
+
+module load opence/1.7.2
+module list
+conda activate mace_develop
+which python
+
+export OMP_NUM_THREADS=1
+
+python /home/ssjensen/mace_orig/mace/scripts/run_train.py \
+       --name="M14-10-20-2023" \
+       --train_file="data/train.xyz" \
+       --test_file="data/test.xyz" \
+       --E0s="average" \
+       --model="MACE" \
+       --hidden_irreps='128x0e + 128x1o' \
+       --r_max=4.4 \
+       --default_dtype='float32' \
+       --loss='ef' \
+       --batch_size=3 \
+       --valid_batch_size=4 \
+       --max_num_epochs=400 \
+       --energy_weight=2200.0 \
+       --forces_weight=10.0 \
+       --swa \
+       --start_swa=1200 \
+       --ema \
+       --ema_decay=0.99 \
+       --amsgrad \
+       --restart_latest \
+       --device=cuda \
+       --valid_fraction=0.05 \
+       > train.out 2> train.err
