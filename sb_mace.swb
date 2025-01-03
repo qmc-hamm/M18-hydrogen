@@ -20,7 +20,7 @@ which python
 export OMP_NUM_THREADS=1
 
 python /home/ssjensen/mace_orig/mace/scripts/run_train.py \
-       --name="M14-10-20-2023" \
+       --name="M18-10-20-2023" \
        --train_file="data/train.xyz" \
        --test_file="data/test.xyz" \
        --E0s="average" \
