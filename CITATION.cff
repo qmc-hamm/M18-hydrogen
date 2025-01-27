@@ -1,0 +1,51 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: M18 hydrogen MACE model
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Scott
+    family-names: Jensen
+    email: scottsjensen7@gmail.com
+    affiliation: University of Illinois Urbana-Champaign
+    orcid: 'https://orcid.org/0000-0002-6576-2204'
+  - given-names: Yubo
+    family-names: Yang
+    email: yubo.paul.yang@gmail.com
+    affiliation: Hofstra University
+    orcid: 'https://orcid.org/0000-0002-8800-9426'
+  - given-names: Shubhang
+    family-names: Goswami
+    email: sgoswam3@Illinois.edu
+    affiliation: University of Illinois at Urbana-Champaign
+    orcid: 'https://orcid.org/0000-0003-0963-8003'
+  - given-names: David
+    family-names: Ceperley
+    email: ceperley@illinois.edu
+    affiliation: University of Illinois at Urbana-Champaign
+    orcid: 'https://orcid.org/0000-0001-5082-6271'
+identifiers:
+  - type: doi
+    value: 10.1063/5.0250686
+    description: The affiliated paper to this repository
+abstract: >
+  MACE model for molecular hydrogen trained on QMC hydrogen
+  data. This model was used for the results of the paper
+  High temperature melting of dense molecular hydrogen from
+  machine-learning interatomic potentials  trained on
+  quantum Monte Carlo doi:10.1063/5.0250686
+keywords:
+  - MACE
+  - hydrogen
+  - chemical-physics
+  - physics
+license: MIT
+preferred-citation:
+  identifiers:
+    - type: doi
+      value: 10.1063/5.0250686
+      description: The paper where this software was used
