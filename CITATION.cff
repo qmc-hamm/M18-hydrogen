@@ -44,8 +44,3 @@ keywords:
   - chemical-physics
   - physics
 license: MIT
-preferred-citation:
-  identifiers:
-    - type: doi
-      value: 10.1063/5.0250686
-      description: The paper where this software was used
